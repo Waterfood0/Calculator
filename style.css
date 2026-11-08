@@ -1,11 +1,70 @@
-.enter{
-    height: 30px;
-    width: 120px;
-    background-color: gray;
+.base{
+    background-color: rgb(3, 11, 51);
+    width: 400px;
+    height: 370px;
+    padding-top: 15px;
+    border-radius: 7px;
+    border-left: 10px solid black;
+    border-bottom: 10px solid black;
 }
+
+
+
+.enter{
+    
+    height: 60px;
+    width: 96%;
+    margin-left: 2%;
+    border-left: 3px solid rgb(143,143,143);
+    border-bottom: 3px solid rgb(143,143,143);
+    background-color: rgb(94,94,94);
+}
+.buttons{
+    margin-top:40px;
+}
+
+
 .text{
     color: rgb(41, 31, 54);
     font-family: Arial;
     font-size: 15px;
     margin: 0px;
+}
+
+
+
+button{
+    color:white;
+    font-family: Arial;
+    height:60px;
+    width: 70px;
+    flex: 1;
+    margin:3px;
+    background-color: rgb(5, 6, 13);
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    border-radius: 3px;
+
+}
+.string1{
+    display: flex;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.string2{
+    display: flex;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.string3{
+    display: flex;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.string4{
+    display: flex;
+    margin-left: 2%;
+    margin-right: 2%;
 }

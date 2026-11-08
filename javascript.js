@@ -19,7 +19,7 @@ const enter = document.querySelector(".enter");
 let sequence = [];
 let value = [];
 let sings =[];
-let p =0;
+let p = 0;
 
 text.setAttribute("class", "text");
 text.textContent = "enter";
@@ -131,6 +131,17 @@ document.addEventListener("keydown", (e) => {
         sequence.push("9");
     }
 });
+zero.addEventListener("click", (e) => {
+    
+    sequence.push("0");
+});
+document.addEventListener("keydown", (e) => {
+    
+    if(e.key === "0"){
+        
+        sequence.push("0");
+    }
+});
 
 
 minus.addEventListener("click", (e) => {
@@ -190,20 +201,26 @@ document.addEventListener("keydown", (e) => {
 
 
 function w(){
-    p = sequence[0]
+    p = sequence[0];
     for(let i = 1; i < sequence.length; i++){
         p = p+sequence[i];
     }
     value.push(p);
+    text.textContent = p;
 
+    enter.appendChild(text);   
 
     for(let i = 0; i <= sequence.length; i++){
         sequence.splice(0, 1);
     }
+    console.log(`${sequence} -- sequence`);
 }
 
 function result(){
     sings.push("=");
+    text.textContent = p;
+
+    enter.appendChild(text);
     w();
     let result = value[0];
     for(let i =0; i < sings.length;i++){
@@ -221,33 +238,39 @@ function result(){
             
         }
         if(sings[i] === "/"){
-            console.log(`${result} === result test `);
-            console.log(`${parseInt(value[i++])} === value i++ test `);
 
             result = parseInt(result) / parseInt(value[i+1]);
-            console.log(`${result} === result after test`);
+
         }
         if(sings[i] === "="){
+
             console.log(`${result} === result`);
-        }   
+            
+        } 
+
     }
-    console.log(`${result} === result`);
     p = result;
+    text.textContent = `${p} - answer`;
+
+    enter.appendChild(text);
     result = 0;
     clear();
+    
 }
 
 function clear(){
     console.log(sings, value, sequence);
-    for(let i = 0; i <= sings.length;i++){
-        sings.splice(0, 1);
+    for(let i = 0; i < sings.length;i++){
+        sings.splice(1);
     }
-    for(let i = 0; i <= value.length;i++){
-        value.splice(0, 1);
+    for(let i = 0; i < value.length;i++){
+        value.splice(1);
     }
-    for(let i = 0; i <= sequence.length;i++){
-        sequence.splice(0, 1);
+    for(let i = 0; i < sequence.length;i++){
+        sequence.splice(1);
     }
     sequence.push(p);
+    sings = sings.splice(1);
+    value = value.splice(1);
     console.log(sings, value, sequence);
 }
