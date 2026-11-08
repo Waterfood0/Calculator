@@ -3,3 +3,9 @@
     width: 120px;
     background-color: gray;
 }
+.text{
+    color: rgb(41, 31, 54);
+    font-family: Arial;
+    font-size: 15px;
+    margin: 0px;
+}
